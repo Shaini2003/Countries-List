@@ -4,15 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countries_Document</title>
+    <title>document</title>
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/bootstrap.css">
+    
+
 </head>
 
 <body>
+    <center>
+        <div class="container m-2 text-bg-info p-3">
+            <div class="d-flex" role="search">
+                <input id="txtInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit" onclick="searchCountry()">Search</button>
+            </div>
+        </div>
+    </center>
+    <div class="container">
+        <div class="row">
+            <img class="img-thumbnail w-25" id="flagImg" src="" alt="Flag">
+            <h1 id="name">Name</h1>
+            <h2 id="officialName">Official Name</h2>
+            <b><p id="capital">Capital</p>
+            <p id="region">Region</p>
+            <p id="population">Population</p>
+            <p id="area">Area</p>
+            <p id="timezones">Time Zone</p></b>
+
+
+        </div>
+
+    </div>
     <h1 class="text-center">All Countries</h1>
     <div class="p-3 mb-2 bg-info text-dark">
+        <center>
 
-        <table class="table table-sm border-primary" id="tblCountries">
+        <table class="table table-sm border-primary" id="tblCountries" style="width:80%"></center>
+
 
 
 

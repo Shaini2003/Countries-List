@@ -25,7 +25,40 @@ fetch(" https://restcountries.com/v3.1/all")
                               </td>
                               <td><img src="${element.flags.png}"alt=""></td>
                          </tr>`
-            console.log(element.name.common);
+
         });
         tblCountries.innerHTML = tableBody;
     })
+
+function searchCountry() {
+    let userInput = document.getElementById("txtInput").value;
+
+
+    let flagImg = document.getElementById("flagImg");
+    let name = document.getElementById("name");
+    let officialName = document.getElementById('officialName');
+    let capital = document.getElementById("capital");
+    let region = document.getElementById("region");
+    let population = document.getElementById("population");
+    let area = document.getElementById("area");
+    let timezones = document.getElementById("timezones");
+    
+
+    fetch( `https://restcountries.com/v3.1/name/${userInput}`)
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(obj => {
+                flagImg.src = obj.flags.png;
+                name.innerText = obj.name.common;
+                officialName.innerText = obj.name.official;
+                capital.innerText = obj.capital;
+                region.innerText = obj.region;
+                population.innerText = obj.population;
+                area.innerText = obj.area;
+                timezones.innerText = obj.timezones;
+                
+
+            })
+        })
+
+}
